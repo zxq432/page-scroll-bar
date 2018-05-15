@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "applications": {
+    "gecko": {
+      "id": "page@scroll.bar",
+      "strict_min_version": "59.0"
+    }
+  },
+  "name": "Page Scroll Bar",
+  "version": "0.1",
+  "description": "Page Scroll Bar",
+  "icons": {
+    "48":"img/up.svg",
+    "96":"img/up.svg"
+  },
+  "permissions": [
+     "<all_urls>",
+     "tabs",
+     "activeTab"
+  ],
+  "background": {
+     "scripts": ["background.js"]
+  }
+}

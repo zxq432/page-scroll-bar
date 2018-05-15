@@ -1,0 +1,110 @@
+#booxView {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+}
+#booxPage, #booxPage *, #booxVscrollbar, #booxVscrollbar *, #booxRuler, #booxRuler * {
+	margin:0;
+	padding:0;
+	border-width:0;
+	width:32px;
+	height:32px;
+	box-sizing:border-box;
+	visibility: visible;
+	touch-action: none;
+	user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none;
+}
+
+#booxPage, #booxVscrollbar, #booxRuler {
+        display:none;
+        position:fixed;
+	top:0;
+        z-index:10;
+        box-shadow:#000 0 0 4px;
+        background-color:rgba(255,255,255,0.3);
+}
+
+#booxPage {
+	top:calc(50% - (32px + 16px));
+	left:calc(100% - 32px - 8px);
+	height:96px;
+	border-radius:16px 16px 16px 16px;
+        background-color:rgba(255,255,255,0.3);
+}
+
+#booxVscrollbar {
+	left:calc(100% - 8px);
+	height:100%;
+}
+
+#booxRuler {
+        position:fixed;
+	left:calc(100% + 32px);
+	border-radius:16px 16px 16px 16px;
+}
+
+#booxPage.enabled, #booxRuler.enabled {
+        display:block;
+}
+
+#booxVscrollbar.enabled {
+        display:block;
+}
+
+#booxVscrollbarDn, #booxVscrollbarUp {
+	flex:0 0 32px;
+}
+
+#booxVscrollbarTrack {
+        display:block;
+        position:absolute;
+	top:32px;
+	height:calc(100% - (32px + 32px));
+        background-color:rgba(255,255,255,0.3);
+	overflow:visible;
+}
+
+#booxVscrollbarTrack.active {
+        background-color:rgba(0,0,0,0.3);
+}
+
+#booxPageDn, #booxPageUp, #booxVscrollbarDn, #booxVscrollbarUp {
+        display:block;
+        position:absolute;
+        background-color:rgba(0,0,0,0.3);
+}
+
+#booxPageUp {
+	top:0;
+	border-radius: 16px 16px 0 0;
+}
+
+#booxPageDn {
+	top:calc(100% - 32px);
+	border-radius: 0 0 16px 16px;
+}
+
+#booxVscrollbarDn {
+	top:calc(100% - 32px);
+}
+
+#booxPageThumb, #booxVscrollbarThumb {
+        display:block;
+        position:relative;
+        height:32px;
+        min-height:32px;
+        background-color:rgba(0,0,0,0.4);
+}
+
+#booxPageThumb {
+	top:32px;
+}
+
+#booxPageDn.active, #booxPageUp.active, #booxPageThumb.active, #booxVscrollbarThumb.active, #booxVscrollbarDn.active, #booxVscrollbarUp.active, #booxRuler.active {
+        background-color:rgba(0,0,0,0.6);
+}
+
+#booxPageThumb.dragging, #booxVscrollbarThumb.dragging {
+        background-color:rgba(0,0,0,0.3);
+}
